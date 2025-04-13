@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-WEB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./music.css">
+    <link rel="shortcut icon" href="./images/pfp.jpg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video-js.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-1">
+                <div class="side-nav">
+                    <ul>
+                        <li><a href="#"><i class="bi bi-house"></i></a></li>
+                        <li><a href="#"><i class="bi bi-heart"></i></a></li>
+                        <li><a href="#"><i class="bi bi-download"></i></a></li>
+                        <li><a href="#"><i class="bi bi-person"></i></a></li>
+                        <li><a href="#"><i class="bi bi-gear"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-11">
+                <div class="main">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <nav class="navbar navbar-expand-lg navbar-custom mb-3 mt-4">
+                                <div class="container">
+                                    <!-- Navbar Toggler (Now Corrected) -->
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+
+                                    <div class="search-container">
+                                        <input id="searchInput" class="search-bar" type="search"
+                                            placeholder="Search anime..">
+                                        <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+
+
+                                    <!-- Navbar Links -->
+                                    <div class="collapse navbar-collapse col-md-7" id="navbarNav">
+                                        <ul class="navbar-nav mx-auto">
+                                            <li class="nav-item"><a class="nav-link" href="./index.html">Anime</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">TV Series</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="./movies.html">Movies</a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" href="./music.html">Music</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="profile-section d-flex">
+                                        <!-- Notifications -->
+                                        <div class="notification-container">
+                                            <!-- Bell Icon with Bootstrap Dropdown -->
+                                            <div class="dropdown">
+                                                <button class="btn bell-icon position-relative" id="bellDropdown"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    🔔
+                                                    <span class="notification-badge">3</span>
+                                                </button>
+
+                                                <!-- Dropdown Menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="bellDropdown">
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">R</span> Raman sent you a message</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">W</span> Wajahat liked your post</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">M</span> Moiz commented on your
+                                                            photo</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="profile">
+                                            <div class="profile-container" id="profileDisplay">
+                                                <img src="./images/pfp.jpg" alt="Default Profile">
+
+                                            </div>
+
+                                            <!-- Dropdown Section -->
+                                            <div class="dropdown-container">
+                                                <select id="profileDropdown">
+                                                    <option value="">-- Select Profile --</option>
+                                                    <option value="raman">Raman</option>
+                                                    <option value="wajahat">Wajahat</option>
+                                                    <option value="moiz">Moiz</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
+                            <section>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h1 class="text-white p-3">Top Recommendation</h1>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="slider-btn left" onclick="slideLeft()">&#9665;</button>
+                                            <button class="slider-btn right" onclick="slideRight()">&#9655;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="background-color: #00000057;margin: 20px;border-radius: 20px;" class="bg">
+                                    <div class="slider-container">
+                                        <div class="slider">
+                                            <div class="slider-item"
+                                                onclick="playSong('song1', 'Sparkle', 'Moiz', './images/sparkle.jpg')">
+                                                <img src="./images/sparkle.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">Sparkle</h3>
+                                                <p class="text-white">By: Moiz</p>
+                                                <audio id="song1"
+                                                    src="./audio/Kimi no Na wa - Sparkle_default.mp3"></audio>
+                                            </div>
+                                            <div class="slider-item"
+                                                onclick="playSong('song2', 'Sunflower', 'Wajahat', './images/sunflower.jpg')">
+                                                <img src="./images/sunflower.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">Sunflower</h3>
+                                                <p class="text-white">By: Wajahat</p>
+                                                <audio id="song2"
+                                                    src="./audio/Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spider-Verse).mp3"></audio>
+                                            </div>
+                                            <div class="slider-item"
+                                                onclick="playSong('song3', 'Blue Bird', 'Raman', './images/blue bird.jpg')">
+                                                <img src="./images/blue bird.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">Blue Bird</h3>
+                                                <p class="text-white">By: Raman</p>
+                                                <audio id="song3" src="./audio/Naruto-Blue-Bird.mp3"></audio>
+                                            </div>
+                                            <div class="slider-item"
+                                                onclick="playSong('song4', 'Insomnia', 'Eve', './images/isomnia.jpg')">
+                                                <img src="./images/isomnia.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">Insomnia</h3>
+                                                <p class="text-white">By: Eve</p>
+                                                <audio id="song4" src="./audio/videoplayback.weba"></audio>
+                                            </div>
+                                            <div class="slider-item"
+                                                onclick="playSong('song5', 'Rumbling', 'Alex', './images/rumbling.jpg')">
+                                                <img src="./images/rumbling.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">Rumbling</h3>
+                                                <p class="text-white">By: Alex</p>
+                                                <audio id="song5" src="./audio/01. The Rumbling.mp3"></audio>
+                                            </div>
+                                            <div class="slider-item"
+                                                onclick="playSong('song6', 'lEveL', 'Zara', './images/statue.jpg')">
+                                                <img src="./images/statue.jpg" class="movie-thumbnail" alt="">
+                                                <div class="play-button2">&#9658;</div>
+                                                <h3 class="pt-2 text-white">lEveL</h3>
+                                                <p class="text-white">By: Zara</p>
+                                                <audio id="song6"
+                                                    src="./audio/LEveL-Solo-Leveling-Opening-1.mp3"></audio>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h1 class="text-white p-3">Following Artists</h1>
+                                            <div class="col-md-12">
+                                                <div class="row m-3">
+                                                    <div class="col-md-3">
+                                                        <img src="./images/p1.jpg" class="img-fluid rounded-circle"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <img src="./images/p2_resized.jpg"
+                                                            class="img-fluid rounded-circle" alt="">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <img src="./images/p3_resized.jpg"
+                                                            class="img-fluid rounded-circle" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="col-md-12">
+                                                <div class="main2">
+                                                    <div class="currentplaying">
+                                                        <p class="heading text-white">Currently Playing</p>
+                                                    </div>
+                                                    <div id="currentlyPlayingList">
+                                                        <p class="text-white">No Song Playing</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- jQuery First, Then Bootstrap JS -->
+                            <script
+                                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                            <script
+                                src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                            <script
+                                src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+                            <script
+                                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                            <script src="./script.js"></script>
+                            <script>
+                                function slideLeft() {
+                                    document.querySelector('.slider').scrollBy({ left: -500, behavior: 'smooth' });
+                                }
+                            
+                                function slideRight() {
+                                    document.querySelector('.slider').scrollBy({ left: 500, behavior: 'smooth' });
+                                }
+                            </script>
+                            <script>
+                                let currentSongs = [];
+                                let currentIndex = 0;
+
+                                function playSong(songId, songName, artistName, albumCover) {
+                                    const song = document.getElementById(songId);
+
+                                    // Pause all other songs
+                                    currentSongs.forEach((s) => s.audio.pause());
+
+                                    // Play or pause the selected song
+                                    if (song.paused) {
+                                        song.play();
+                                        updateCurrentlyPlaying(songName, artistName, albumCover, song);
+                                    } else {
+                                        song.pause();
+                                        updateControls();
+                                    }
+                                }
+
+                                function updateCurrentlyPlaying(songName, artistName, albumCover, song) {
+                                    // Remove song if already in the list
+                                    currentSongs = currentSongs.filter(s => s.audio !== song);
+
+                                    // Add the new song to the top of the list
+                                    currentSongs.unshift({ name: songName, artist: artistName, cover: albumCover, audio: song });
+
+                                    // Keep only the last 3 songs
+                                    if (currentSongs.length > 3) {
+                                        currentSongs.pop();
+                                    }
+
+                                    currentIndex = 0; // Reset to first song
+                                    renderCurrentlyPlaying();
+                                    updateControls();
+                                }
+
+                                function renderCurrentlyPlaying() {
+                                    const container = document.getElementById("currentlyPlayingList");
+                                    container.innerHTML = "";
+
+                                    currentSongs.forEach((song, index) => {
+                                        const songDiv = document.createElement("div");
+                                        songDiv.classList.add("loader");
+                                        songDiv.innerHTML = `
+                                            <div class="song text-white">
+                                                <p class="name">${song.name}</p>
+                                                <p class="artist">${song.artist}</p>
+                                            </div>
+                                            <div class="albumcover">
+                                                <img src="${song.cover}" class="img-fluid rounded-circle" alt="">
+                                            </div>
+                                        `;
+                                        if (index === 0) {
+                                            songDiv.innerHTML += `
+                                                <div class="controls">
+                                                    <button  onclick="prevSong()">⏮</button>
+                                                    <button   onclick="togglePlayPause()">▶️/⏸</button>
+                                                    <button   onclick="stopSong()">⏹</button>
+                                                    <button   onclick="nextSong()">⏭</button>
+                                                    <input  type="range" id="progressBar" value="0" step="1" max="100" onchange="seekSong(this.value)">
+                                                    <input  type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="setVolume(this.value)">
+                                                </div>
+                                            `;
+                                        }
+                                        container.appendChild(songDiv);
+                                    });
+
+                                    if (currentSongs.length === 0) {
+                                        container.innerHTML = `<p class="text-white">No Song Playing</p>`;
+                                    }
+                                }
+
+                                function togglePlayPause() {
+                                    if (currentSongs.length === 0) return;
+                                    let song = currentSongs[0].audio;
+                                    if (song.paused) {
+                                        song.play();
+                                    } else {
+                                        song.pause();
+                                    }
+                                    updateControls();
+                                }
+
+                                function stopSong() {
+                                    if (currentSongs.length === 0) return;
+                                    let song = currentSongs[0].audio;
+                                    song.pause();
+                                    song.currentTime = 0;
+                                    updateControls();
+                                }
+
+                                function nextSong() {
+                                    if (currentSongs.length <= 1) return;
+                                    currentIndex = (currentIndex + 1) % currentSongs.length;
+                                    playSelectedSong();
+                                }
+
+                                function prevSong() {
+                                    if (currentSongs.length <= 1) return;
+                                    currentIndex = (currentIndex - 1 + currentSongs.length) % currentSongs.length;
+                                    playSelectedSong();
+                                }
+
+                                function playSelectedSong() {
+                                    currentSongs.forEach((s) => s.audio.pause());
+                                    let song = currentSongs[currentIndex].audio;
+                                    song.play();
+                                    updateControls();
+                                }
+
+                                function seekSong(value) {
+                                    if (currentSongs.length === 0) return;
+                                    let song = currentSongs[0].audio;
+                                    song.currentTime = (song.duration * value) / 100;
+                                }
+
+                                function setVolume(value) {
+                                    if (currentSongs.length === 0) return;
+                                    currentSongs[0].audio.volume = value;
+                                }
+
+                                function updateControls() {
+                                    if (currentSongs.length === 0) return;
+                                    let song = currentSongs[0].audio;
+                                    let progressBar = document.getElementById("progressBar");
+                                    if (!progressBar) return;
+                                    setInterval(() => {
+                                        progressBar.value = (song.currentTime / song.duration) * 100;
+                                    }, 500);
+                                }
+                            </script>
+
+</body>
+
+</html>

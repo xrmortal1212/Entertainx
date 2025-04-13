@@ -1,0 +1,893 @@
+* {
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-image: url(./images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+}
+
+.container-fluid {
+    align-items: center;
+}
+
+.side-nav {
+    background-color: #55555556;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    top: 30%;
+    position: fixed;
+    border: 1px solid #ffffffa9;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav ul li {
+    margin: 20px 0;
+}
+
+.side-nav ul li a {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.side-nav ul li a:hover {
+    background-color: #808080bb;
+
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.main {
+    background-color: #55555556;
+    backdrop-filter: blur(10px);
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid #ffffffa9;
+}
+
+/* Navbar Styling */
+.navbar-custom {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* Navbar Toggler Custom Icon */
+.navbar-toggler {
+    border: none;
+    font-size: 24px;
+    color: white;
+    background: transparent;
+}
+
+.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    /* Ensures it's above other content */
+}
+
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Fixes */
+@media (max-width: 992px) {
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .profile-section {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+input {
+    background: #1d1d1dc5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #ffffffb3;
+}
+
+nav .navbar-collapse ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+nav .navbar-collapse ul li a:hover {
+    color: #2c2c2c;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-section img {
+    width: 60px;
+    height: 60px;
+
+}
+
+.profile {
+    background-color: #4e4e4e8f;
+    padding: 5px 10px;
+    border-radius: 20px;
+
+}
+
+
+.navbar-toggler {
+    border: none;
+    margin-bottom: 10px;
+    background: transparent;
+    padding: 1px;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: -8px;
+}
+
+/* Fix Toggle Behavior */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Ensure Navbar is Visible on Small Screens */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: #1f1f1f;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+.continue-watching-section {
+    background: #38414981;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    height: 1056;
+    /* Adjusted height */
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 18px;
+}
+
+.watching-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+
+.watching-item {
+    display: flex;
+    align-items: center;
+    background: #2c2c2c;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+
+.watching-item:hover {
+    background: #3a3a3a;
+}
+
+
+.watching-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+
+.watching-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+
+.watching-info h5 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.new-trailer-section {
+    padding: 10px;
+    border-radius: 15px;
+    background: #38414981;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.trailer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trailer-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.trailer-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.trailer-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trailer-info h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+
+
+
+.custom-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+}
+
+.custom-card img {
+    height: 500px;
+    object-fit: cover;
+
+    width: 100%;
+
+}
+
+.card-img-overlay {
+    background: linear-gradient(to top, #000000a8, transparent);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.badge-trending {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 69, 0, 0.9);
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 12px;
+    color: white;
+}
+
+.tags {
+    margin-bottom: 10px;
+}
+
+.tag {
+    background: #00000033;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.buttons .btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.suggested-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.suggested-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 10px;
+    color: white;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+h4 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.play-buttons {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+
+
+
+
+
+.trailer-card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.video-container {
+    position: relative;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 20%;
+    z-index: 2;
+}
+
+.overlay-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 3;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+.play-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.side {
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Firefox Scrollbar */
+html {
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1);
+    scrollbar-width: thin;
+}
+
+#currentProfileName {
+    color: white;
+    /* Profile Name White */
+    margin-left: 8px;
+
+}
+
+.dropdown-menu .dropdown-item h5 {
+    color: black;
+    /* Dropdown text white */
+}
+
+.close-iframe {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    display: none;
+    /* Hidden by default */
+}
+
+.close-iframe:hover {
+    color: #e2e2e2;
+}
+
+.dropdown a {
+    border-radius: 50px;
+}
+
+/* Search Bar */
+.search-bar {
+    background: #3a3a3aa6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    width: 200px;
+}
+
+/* Style the search bar */
+/* Ensure search container is positioned correctly */
+.search-container {
+    position: relative;
+    /* Allows absolute positioning inside */
+    display: inline-block;
+    /* Ensures search bar and results are aligned */
+    width: 200px;
+    /* Match the search bar width */
+}
+
+/* Style the search bar */
+.search-bar {
+    background: #3a3a3aa6;
+    /* Dark semi-transparent background */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    width: 100%;
+    /* Match parent width */
+}
+
+/* Style the search results dropdown */
+.search-results {
+    position: absolute;
+    top: 100%;
+    /* Places results right below the search bar */
+    left: 0;
+    width: 100%;
+    /* Matches search bar width */
+    background: #3a3a3aa6;
+    /* Same as search bar */
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    z-index: 1000;
+    max-height: 200px;
+    /* Prevents it from getting too big */
+    overflow-y: auto;
+    display: none;
+    /* Hidden by default */
+}
+
+/* Each result item */
+.search-result-item {
+    padding: 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Hover effect */
+.search-result-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Show results when there are results */
+.search-results.show {
+    display: block;
+}
+
+.profile-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-container img {
+
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-container h2 {
+    margin-top: 10px;
+    font-size: 22px;
+
+}
+
+.dropdown-container {
+    margin-top: 20px;
+    
+    position: relative;
+}
+
+select {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+select option {
+    background: #1e1e2f;
+    color: #fff;
+}
+
+.notification-container {
+    position: relative;
+}
+
+.bell-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease;
+}
+
+.bell-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    font-size: 5px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    width: 280px;
+    background: #2c2c3a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.dropdown-item {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.notif-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffcc00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #1e1e2f;
+}
+[class*="btn-glitch-"] {
+    display: inline-block;
+
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px 13px;
+    min-width: 175px;
+
+    line-height: 1.5em;
+    white-space: no-wrap;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 15px;
+  
+    .text,
+    .decoration {
+      display: inline-block;
+    }
+  
+    .decoration {
+      display: inline-block;
+      float: right;
+    }
+  
+    &:hover,
+    &:focus {
+      animation-name: glitch;
+      animation-duration: 0.2s;
+      background-color: #3a3a3a;
+      color: black;
+      border: 1px solid black;
+  
+      .text-decoration {
+        animation-name: blink;
+        animation-duration: 0.1s;
+        animation-iteration-count: infinite;
+      }
+  
+      .decoration {
+        animation-name: blink;
+        animation-duration: 0.1s;
+        animation-iteration-count: infinite;
+      }
+    }
+  
+    &:active {
+      background: none;
+      color: yellow;
+  
+      .text-decoration {
+        animation-name: none;
+      }
+  
+      .decoration {
+        animation-name: none;
+      }
+  
+      :before,
+      :after {
+        display: none;
+      }
+    }
+  }
+  
+  @keyframes glitch {
+    25% {
+      background-color: red;
+      transform: translateX(-10px);
+      letter-spacing: 10px;
+    }
+  
+    35% {
+      background-color: green;
+      transform: translate(10px);
+    }
+  
+    59% {
+      opacity: 0;
+    }
+  
+    60% {
+      background-color: blue;
+      transform: translate(-10px);
+      filter: blur(5px);
+    }
+  
+    100% {
+      background-color: yellow;
+      blur: (5px);
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes shrink {
+    100% {
+      width: 10%;
+    }
+  }
+  

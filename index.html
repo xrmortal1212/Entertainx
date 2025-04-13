@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-WEB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/pfp.jpg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video-js.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-1">
+                <div class="side-nav">
+                    <ul>
+                        <li><a href="#"><i class="bi bi-house"></i></a></li>
+                        <li><a href="#"><i class="bi bi-heart"></i></a></li>
+                        <li><a href="#"><i class="bi bi-download"></i></a></li>
+                        <li><a href="#"><i class="bi bi-person"></i></a></li>
+                        <li><a href="#"><i class="bi bi-gear"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-11">
+                <div class="main">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <nav class="navbar navbar-expand-lg navbar-custom mb-3 mt-4">
+                                <div class="container">
+                                    <!-- Navbar Toggler (Now Corrected) -->
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+
+                                    <div class="search-container">
+                                        <input id="searchInput" class="search-bar" type="search"
+                                            placeholder="Search anime..">
+                                        <div id="searchResults" class="search-results"></div>
+                                    </div>
+
+
+
+                                    <!-- Navbar Links -->
+                                    <div class="collapse navbar-collapse col-md-7" id="navbarNav">
+                                        <ul class="navbar-nav mx-auto">
+                                            <li class="nav-item"><a class="nav-link" href="./index.html">Anime</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">TV Series</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="./movies.html">Movies</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="./music.html">Music</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="profile-section d-flex">
+                                        <!-- Notifications -->
+                                        <div class="notification-container">
+                                            <!-- Bell Icon with Bootstrap Dropdown -->
+                                            <div class="dropdown">
+                                                <button class="btn bell-icon position-relative" id="bellDropdown"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    🔔
+                                                    <span class="notification-badge">3</span>
+                                                </button>
+
+                                                <!-- Dropdown Menu -->
+                                                <ul class="dropdown-menu dropdown-menu-end"
+                                                    aria-labelledby="bellDropdown">
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">R</span> Raman sent you a message</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">W</span> Wajahat liked your post</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span
+                                                                class="notif-icon">M</span> Moiz commented on your
+                                                            photo</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="profile">
+                                            <div class="profile-container" id="profileDisplay">
+                                                <img src="./images/pfp.jpg" alt="Default Profile">
+
+                                            </div>
+
+                                            <!-- Dropdown Section -->
+                                            <div class="dropdown-container">
+                                                <select id="profileDropdown">
+                                                    <option value="">-- Select Profile --</option>
+                                                    <option value="raman">Raman</option>
+                                                    <option value="wajahat">Wajahat</option>
+                                                    <option value="moiz">Moiz</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </nav>
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="side col-md-3">
+                                    <div class="col-md-12 mb-3">
+                                        <div class="new-trailer-section">
+                                            <h3 class="section-title">🔥 New Trailer <span>Sort by: <strong>Today
+                                                        ⬆</strong></span></h3>
+                                            <div class="trailer-list">
+                                                <div class="trailer-card">
+                                                    <div class="video-container">
+                                                        <img loading="lazy" id="trailerThumbnail" src="./images/opt.jpg"
+                                                            alt="The Last Kingdom: Seven Kings Must Die">
+                                                        <iframe id="trailerVideo2" width="100%" height="100%"
+                                                            src="https://www.youtube.com/embed/2QjJMT554Bc?controls=1&modestbranding=1&rel=0"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                        <button class="play-button" id="playTrailer">
+                                                            <i class="bi bi-play-fill"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="trailer-info">
+                                                        <h4>One Piece Trailer</h4>
+                                                    </div>
+                                                </div>
+
+                                                <div class="trailer-card">
+                                                    <div class="video-container">
+                                                        <img loading="lazy" id="trailerThumbnail" src="./images/dt.jpg"
+                                                            alt="The Last Kingdom: Seven Kings Must Die">
+                                                        <iframe id="trailerVideo2" width="100%" height="100%"
+                                                            src="https://www.youtube.com/embed/Jl_L50tDZ7Q?controls=1&modestbranding=1&rel=0"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                        <button class="play-button" id="playTrailer">
+                                                            <i class="bi bi-play-fill"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="trailer-info">
+                                                        <h4>DanDaDan Season 2 Trailer</h4>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="continue-watching-section">
+                                            <h3 class="section-title">Continue Watching</h3>
+                                            <div class="watching-list">
+                                                <div class="watching-item mb-1">
+                                                    <img loading="lazy" src="./images/Jin woo.jpg"
+                                                        class="img-fluid rounded" alt="white Season 3">
+                                                    <div class="watching-info">
+                                                        <h5 id="title">Solo Leveling</h5>
+                                                        <a href="#" class="play-buttons">
+                                                            <i class="bi bi-play-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="watching-item mb-1">
+                                                    <img loading="lazy" src="./images/ddd.jpg" class="img-fluid rounded"
+                                                        alt="white Season 3">
+                                                    <div class="watching-info">
+                                                        <h5 id="title">Zom 100</h5>
+                                                        <a href="#" class="play-buttons">
+                                                            <i class="bi bi-play-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="watching-item mb-1">
+                                                    <img loading="lazy" src="./images/ts.jpg" class="img-fluid rounded"
+                                                        alt="white Season 3">
+                                                    <div class="watching-info">
+                                                        <h5 id="title">Sakamoto Days</h5>
+                                                        <a href="#" class="play-buttons">
+                                                            <i class="bi bi-play-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="col-md-12">
+                                        <div class="main-content">
+                                            <div class="video-container custom-card">
+                                                <div class="badge-trending">🔥 Now Trending</div>
+                                                <img loading="lazy" id="trailerThumbnail" src="./images/spider man.png"
+                                                    class="img-fluid card-img" alt="Spider-Man">
+                                                <iframe id="trailerVideo" width="100%" height="100%"
+                                                    src="https://www.youtube.com/embed/2nCVdDuvQrs?si=JBkjnbP-sZIvty2d"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                                    style="display: none;">
+                                                </iframe>
+                                                <button class="play-button" id="playTrailer">
+                                                    <i class="bi bi-play-fill"></i>
+                                                </button>
+                                                <div class="overlay-content">
+                                                    <div class="tags">
+                                                        <span class="tag">Animation</span>
+                                                        <span class="tag">Mastermind</span>
+                                                    </div>
+                                                    <h5 id="title" class="card-title">Classroom of the Elite
+                                                    </h5>
+                                                    <p class="card-text">Whole school are the pawns of
+                                                        <strong>Ayanokoji
+                                                            Kiyotaka</strong>
+                                                    </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12">
+
+
+                                        <div class=" mt-4">
+                                            <h1 class="text-white">You Might Like</h1>
+                                            <div class="row" id="movie-list">
+                                                <!-- Movie 1 -->
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/blu.jpg" alt="Movie 1">
+                                                        <div class="overlay">
+                                                            <span class="badge">Sports</span>
+                                                            <h4>Blue Lock</h4>
+                                                            <p>Exciting sports-packed adventure.</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube-nocookie.com/embed/L1nxJY-N7U4?controls=1&modestbranding=1&rel=0"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Solo Leveling -->
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/Jin woo.jpg" alt="Solo Leveling">
+                                                        <div class="overlay">
+                                                            <span class="badge">Sci-Fi</span>
+                                                            <h4>Solo Leveling</h4>
+                                                            <p>A Boy Who got SuperPowers</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube.com/embed/IrHTT2IEKpE?si=or46Vnd0JKtZuiFi"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Movie 3 -->
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/dbd.jpg" alt="Movie 3">
+                                                        <div class="overlay">
+                                                            <span class="badge">Action</span>
+                                                            <h4>Dragon ball Daima</h4>
+                                                            <p>A terrifying experience awaits.</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube-nocookie.com/embed/j5dwAVn4eJM?controls=1&modestbranding=1&rel=0"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="movie-list">
+                                                <!-- Row 2 -->
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/ds.jpg" alt="Anime Clip 1">
+                                                        <div class="overlay">
+                                                            <span class="badge">Anime</span>
+                                                            <h4>Demon Slayer</h4>
+                                                            <p>Epic anime scene from popular series.</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube-nocookie.com/embed/q95O1yJzSGE?controls=1&modestbranding=1&rel=0"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/ddd.jpg" alt="Anime Clip 2">
+                                                        <div class="overlay">
+                                                            <span class="badge">Fantasy</span>
+                                                            <h4>Zom 100</h4>
+                                                            <p>Magical battle with stunning animation.</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube.com/embed/A2uDu4I7i14?si=T7gchxIx7z1ffdQD"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-12">
+                                                    <div class="suggested-card mb-3 video-container">
+                                                        <img loading="lazy" class="trailerThumbnail img-fluid"
+                                                            src="images/ts.jpg" alt="Anime Clip 3">
+                                                        <div class="overlay">
+                                                            <span class="badge">Thriller</span>
+                                                            <h4>Sakamoto Days</h4>
+                                                            <p>Intense fight sequence.</p>
+                                                            <button style="margin-left: 150px;" class="play-button">
+                                                                <i class="bi bi-play-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                        <iframe class="trailerVideo" width="100%" height="100%"
+                                                            src="https://www.youtube.com/embed/chjVPTdBel8?si=Sr-7bpKs3rWgmdHm"
+                                                            frameborder="0"
+                                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen style="display: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery First, Then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
